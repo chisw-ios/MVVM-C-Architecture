@@ -6,17 +6,20 @@
 //
 
 import Foundation
+import CombineNetworking
 
 protocol AppContainer: AnyObject {
     var authService: AuthService { get }
     var userService: UserService { get }
     var appSettingsService: AppSettingsService { get }
+    var dogService: DogService { get }
 }
 
 final class AppContainerImpl: AppContainer {
     let authService: AuthService
     let userService: UserService
     let appSettingsService: AppSettingsService
+    let dogService: DogService
 
     init() {
         let network = NetworkImpl()
@@ -30,6 +33,17 @@ final class AppContainerImpl: AppContainer {
 
         let appSettingsService = AppSettingsServiceImpl()
         self.appSettingsService = appSettingsService
+        
+        let baseURL = URL(string: "https://api.thedogapi.com/v1")!
+        let authPlugin = AuthPlugin(token: "60b38a7e-b2b0-4c87-9106-04c900e0cdf5")
+        
+        let provider = CNProvider(
+            baseURL: baseURL,
+            requestBuilder: DogAPIRequestBuilder.self,
+            plugins: [authPlugin]
+        )
+        
+        dogService = DogServiceImpl(provider)
     }
 }
 

@@ -84,6 +84,12 @@
 		74E0B69A2725F31F0090A21B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E0B6992725F31F0090A21B /* BaseViewController.swift */; };
 		74E0B69D2725F3450090A21B /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E0B69C2725F3450090A21B /* BaseViewModel.swift */; };
 		74E0B6AB2725FA740090A21B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E0B6AA2725FA740090A21B /* Coordinator.swift */; };
+		CE387DD82768ED0800D35186 /* CombineNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = CE387DD72768ED0800D35186 /* CombineNetworking */; };
+		CE387DDC2768FCC300D35186 /* AuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE387DDB2768FCC300D35186 /* AuthPlugin.swift */; };
+		CE387DE02768FDA700D35186 /* DogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE387DDF2768FDA700D35186 /* DogService.swift */; };
+		CE387DE22768FDD700D35186 /* DogAPIRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE387DE12768FDD700D35186 /* DogAPIRequestBuilder.swift */; };
+		CE387DE42768FE1B00D35186 /* DogServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE387DE32768FE1B00D35186 /* DogServiceImpl.swift */; };
+		CE387DE62768FEC500D35186 /* DogResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE387DE52768FEC500D35186 /* DogResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +168,11 @@
 		74E0B6992725F31F0090A21B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		74E0B69C2725F3450090A21B /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		74E0B6AA2725FA740090A21B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CE387DDB2768FCC300D35186 /* AuthPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPlugin.swift; sourceTree = "<group>"; };
+		CE387DDF2768FDA700D35186 /* DogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogService.swift; sourceTree = "<group>"; };
+		CE387DE12768FDD700D35186 /* DogAPIRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAPIRequestBuilder.swift; sourceTree = "<group>"; };
+		CE387DE32768FE1B00D35186 /* DogServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogServiceImpl.swift; sourceTree = "<group>"; };
+		CE387DE52768FEC500D35186 /* DogResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +182,7 @@
 			files = (
 				74784D2C2741790900C6CC92 /* CombineCocoa in Frameworks */,
 				74784D2F27417E5D00C6CC92 /* KeyboardLayoutGuide in Frameworks */,
+				CE387DD82768ED0800D35186 /* CombineNetworking in Frameworks */,
 				74A6FAF32753CFD400DC44DF /* Swinject in Frameworks */,
 				74A6FAF72753D76900DC44DF /* KeychainAccess in Frameworks */,
 			);
@@ -239,6 +251,7 @@
 		74A6FADF2753CA8300DC44DF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CE387DE52768FEC500D35186 /* DogResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,6 +259,7 @@
 		74A6FAE02753CA8600DC44DF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CE387DDD2768FD6400D35186 /* Networking */,
 				7443D07E27493D7A00B6F2B0 /* AuthService.swift */,
 				7443D08027495DCE00B6F2B0 /* AppSettings.swift */,
 				74A6FAEF2753CE0200DC44DF /* UserService.swift */,
@@ -468,6 +482,33 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		CE387DDA2768FCB400D35186 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				CE387DDB2768FCC300D35186 /* AuthPlugin.swift */,
+			);
+			path = Plugins;
+			sourceTree = "<group>";
+		};
+		CE387DDD2768FD6400D35186 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CE387DDA2768FCB400D35186 /* Plugins */,
+				CE387DDE2768FD7300D35186 /* DogService */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CE387DDE2768FD7300D35186 /* DogService */ = {
+			isa = PBXGroup;
+			children = (
+				CE387DDF2768FDA700D35186 /* DogService.swift */,
+				CE387DE12768FDD700D35186 /* DogAPIRequestBuilder.swift */,
+				CE387DE32768FE1B00D35186 /* DogServiceImpl.swift */,
+			);
+			path = DogService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,6 +531,7 @@
 				74784D2E27417E5D00C6CC92 /* KeyboardLayoutGuide */,
 				74A6FAF22753CFD400DC44DF /* Swinject */,
 				74A6FAF62753D76900DC44DF /* KeychainAccess */,
+				CE387DD72768ED0800D35186 /* CombineNetworking */,
 			);
 			productName = MVVMSkeleton;
 			productReference = 74E0B67A2725ED760090A21B /* MVVMSkeleton.app */;
@@ -523,6 +565,7 @@
 				74784D2D27417E5D00C6CC92 /* XCRemoteSwiftPackageReference "KeyboardLayoutGuide" */,
 				74A6FAF12753CFD400DC44DF /* XCRemoteSwiftPackageReference "Swinject" */,
 				74A6FAF52753D76900DC44DF /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				CE387DD62768ED0800D35186 /* XCRemoteSwiftPackageReference "CombineNetworking" */,
 			);
 			productRefGroup = 74E0B67B2725ED760090A21B /* Products */;
 			projectDirPath = "";
@@ -596,6 +639,7 @@
 				74B926FA2766808A005395A0 /* Colors.swift in Sources */,
 				74B9271C27689937005395A0 /* HomeView.swift in Sources */,
 				74A6FACE275384E700DC44DF /* AppCoordinator.swift in Sources */,
+				CE387DE22768FDD700D35186 /* DogAPIRequestBuilder.swift in Sources */,
 				74A6FAF02753CE0200DC44DF /* UserService.swift in Sources */,
 				74A6FB092753FBEF00DC44DF /* HomeCoordinator.swift in Sources */,
 				74B927082766878B005395A0 /* AxisScrollView.swift in Sources */,
@@ -616,6 +660,7 @@
 				7443D07F27493D7A00B6F2B0 /* AuthService.swift in Sources */,
 				74A6FAEA2753CD4900DC44DF /* AppConfiguration.swift in Sources */,
 				74A6FB002753FA3400DC44DF /* MainTabBarViewModel.swift in Sources */,
+				CE387DE42768FE1B00D35186 /* DogServiceImpl.swift in Sources */,
 				74A6FAEE2753CDF900DC44DF /* AppContainer.swift in Sources */,
 				74B926C427666028005395A0 /* UIView+Constraints.swift in Sources */,
 				74E0B69A2725F31F0090A21B /* BaseViewController.swift in Sources */,
@@ -624,6 +669,7 @@
 				74A6FAD02753852C00DC44DF /* AuthCoordinator.swift in Sources */,
 				74E0B67E2725ED760090A21B /* AppDelegate.swift in Sources */,
 				74B926FE27668594005395A0 /* BaseView.swift in Sources */,
+				CE387DE62768FEC500D35186 /* DogResponseModel.swift in Sources */,
 				74A6FB0B2753FC6A00DC44DF /* SettingsCoordinator.swift in Sources */,
 				74B9270527668633005395A0 /* SignUpView.swift in Sources */,
 				74B9270A2766898A005395A0 /* UIEdgeInsets+Ext.swift in Sources */,
@@ -636,9 +682,11 @@
 				74E0B6AB2725FA740090A21B /* Coordinator.swift in Sources */,
 				74B9270427668633005395A0 /* SignUpViewController.swift in Sources */,
 				74784D36274182B200C6CC92 /* AuthSelectViewController.swift in Sources */,
+				CE387DE02768FDA700D35186 /* DogService.swift in Sources */,
 				74A6FAFE2753FA3400DC44DF /* MainTabBarModuleBuilder.swift in Sources */,
 				74A6FB052753FB9700DC44DF /* SettingsModuleBuilder.swift in Sources */,
 				74B92711276692D5005395A0 /* SignInViewController.swift in Sources */,
+				CE387DDC2768FCC300D35186 /* AuthPlugin.swift in Sources */,
 				74B9270327668633005395A0 /* SignUpModuleBuilder.swift in Sources */,
 				74B9270627668633005395A0 /* SignUpViewModel.swift in Sources */,
 				74784D312741805900C6CC92 /* ViewRepresentable.swift in Sources */,
@@ -789,7 +837,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G66RUZ442Z;
+				DEVELOPMENT_TEAM = 63263MV7NR;
 				INFOPLIST_FILE = MVVMSkeleton/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -809,7 +857,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G66RUZ442Z;
+				DEVELOPMENT_TEAM = 63263MV7NR;
 				INFOPLIST_FILE = MVVMSkeleton/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -879,6 +927,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		CE387DD62768ED0800D35186 /* XCRemoteSwiftPackageReference "CombineNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kvasnetskyi/CombineNetworking";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -901,6 +957,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 74A6FAF52753D76900DC44DF /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		CE387DD72768ED0800D35186 /* CombineNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE387DD62768ED0800D35186 /* XCRemoteSwiftPackageReference "CombineNetworking" */;
+			productName = CombineNetworking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

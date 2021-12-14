@@ -9,10 +9,11 @@ import UIKit
 
 final class HomeViewController: BaseViewController<HomeViewModel> {
     // MARK: - Views
-    private let contentView = HomeView()
+    private var contentView: HomeView!
 
     // MARK: - Lifecycle
     override func loadView() {
+        contentView = HomeView(dataSource: viewModel)
         view = contentView
     }
 
@@ -28,6 +29,12 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
                 switch action {
                 
                 }
+            }
+            .store(in: &cancellables)
+        
+        viewModel.reloadDataPublisher
+            .sink { [unowned self] _ in
+                contentView.reloadData()
             }
             .store(in: &cancellables)
     }
