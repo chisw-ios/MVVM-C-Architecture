@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  MVVMSkeleton
+
+  Created by Roman Savchenko on 12.12.2021.
+  
+*/
+
+// General
+"error" = "Error";
+"ok" = "OK";
+"done" = "Done";
+"cancel" = "Cancel";
+"choose-option" = "Choose option";
+"sign-up" = "Sign Up";
+"sign-in" = "Sign In";
+"skip" = "Skip";
+"name" = "Name";
+"email" = "Email";
+"password" = "Password";
+"confirm-password" = "Confirm password";
+
+"home" = "Home";
+"settings" = "Settings";
+"logout" = "Logout";
+
