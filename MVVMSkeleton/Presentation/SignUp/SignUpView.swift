@@ -102,7 +102,6 @@ final class SignUpView: BaseView {
 
         addSubview(scrollView, withEdgeInsets: .zero, safeArea: true)
         scrollView.contentView.addSubview(stack, withEdgeInsets: .all(Constant.containerSpacing))
-        
     }
 }
 

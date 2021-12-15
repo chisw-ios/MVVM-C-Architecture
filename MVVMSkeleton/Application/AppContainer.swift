@@ -22,10 +22,9 @@ final class AppContainerImpl: AppContainer {
     let dogService: DogService
 
     init() {
-        let network = NetworkImpl()
         let appConfiguration = AppConfigurationImpl()
 
-        let authService = AuthServiceImpl(network: network)
+        let authService = AuthServiceImpl()
         self.authService = authService
 
         let userService = UserServiceImpl(configuration: appConfiguration)
@@ -33,15 +32,12 @@ final class AppContainerImpl: AppContainer {
 
         let appSettingsService = AppSettingsServiceImpl()
         self.appSettingsService = appSettingsService
+
+        let authPlugin = AuthPlugin(token: appConfiguration.environment.apiToken)
         
-        let baseURL = URL(string: "https://api.thedogapi.com/v1")!
-        let authPlugin = AuthPlugin(token: "60b38a7e-b2b0-4c87-9106-04c900e0cdf5")
-        
-        let provider = CNProvider(
-            baseURL: baseURL,
-            requestBuilder: DogAPIRequestBuilder.self,
-            plugins: [authPlugin]
-        )
+        let provider = CNProvider(baseURL: appConfiguration.environment.baseURL,
+                                  requestBuilder: DogAPIRequestBuilder.self,
+                                  plugins: [authPlugin])
         
         dogService = DogServiceImpl(provider)
     }

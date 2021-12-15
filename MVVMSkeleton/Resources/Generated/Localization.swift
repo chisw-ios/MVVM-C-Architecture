@@ -32,6 +32,8 @@ internal enum Localization {
   internal static let ok = Localization.tr("Localizable", "ok")
   /// Password
   internal static let password = Localization.tr("Localizable", "password")
+  /// Search
+  internal static let search = Localization.tr("Localizable", "search")
   /// Settings
   internal static let settings = Localization.tr("Localizable", "settings")
   /// Sign In
