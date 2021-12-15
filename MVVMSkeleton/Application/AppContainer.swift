@@ -9,6 +9,7 @@ import Foundation
 import CombineNetworking
 
 protocol AppContainer: AnyObject {
+    var appConfiguration: AppConfiguration { get }
     var authService: AuthService { get }
     var userService: UserService { get }
     var appSettingsService: AppSettingsService { get }
@@ -16,6 +17,7 @@ protocol AppContainer: AnyObject {
 }
 
 final class AppContainerImpl: AppContainer {
+    let appConfiguration: AppConfiguration
     let authService: AuthService
     let userService: UserService
     let appSettingsService: AppSettingsService
@@ -23,6 +25,7 @@ final class AppContainerImpl: AppContainer {
 
     init() {
         let appConfiguration = AppConfigurationImpl()
+        self.appConfiguration = appConfiguration
 
         let authService = AuthServiceImpl()
         self.authService = authService

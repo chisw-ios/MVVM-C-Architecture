@@ -1,27 +1,11 @@
 //
-//  AppConfiguration.swift
+//  AppEnvironment.swift
 //  MVVMSkeleton
 //
-//  Created by Roman Savchenko on 28.11.2021.
+//  Created by Roman Savchenko on 16.12.2021.
 //
 
 import Foundation
-
-protocol AppConfiguration {
-    var bundleId: String { get }
-}
-
-final class AppConfigurationImpl: AppConfiguration {
-    let bundleId: String
-    let environment: AppEnvironment = .dev
-    
-    init() {
-        guard let bundleId = Bundle.main.bundleIdentifier else {
-            fatalError("no bundle info")
-        }
-        self.bundleId = bundleId
-    }
-}
 
 enum AppEnvironment: String {
     case dev

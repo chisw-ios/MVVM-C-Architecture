@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		742E3AE0276AAD3A004CE5EF /* Config-DEV.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 742E3ADF276AAD3A004CE5EF /* Config-DEV.xcconfig */; };
+		742E3AE2276AAD66004CE5EF /* Config-STG.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 742E3AE1276AAD66004CE5EF /* Config-STG.xcconfig */; };
+		742E3AE4276AAD75004CE5EF /* Config-PROD.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 742E3AE3276AAD75004CE5EF /* Config-PROD.xcconfig */; };
+		742E3AEF276AB425004CE5EF /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E3AEE276AB425004CE5EF /* AppEnvironment.swift */; };
 		7443D07F27493D7A00B6F2B0 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443D07E27493D7A00B6F2B0 /* AuthService.swift */; };
 		7443D08127495DCE00B6F2B0 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443D08027495DCE00B6F2B0 /* AppSettings.swift */; };
 		7443D085274964A200B6F2B0 /* HomeModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443D082274964A200B6F2B0 /* HomeModuleBuilder.swift */; };
@@ -93,6 +97,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		742E3ADF276AAD3A004CE5EF /* Config-DEV.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Config-DEV.xcconfig"; sourceTree = "<group>"; };
+		742E3AE1276AAD66004CE5EF /* Config-STG.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Config-STG.xcconfig"; sourceTree = "<group>"; };
+		742E3AE3276AAD75004CE5EF /* Config-PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Config-PROD.xcconfig"; sourceTree = "<group>"; };
+		742E3AEE276AB425004CE5EF /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		7443D07E27493D7A00B6F2B0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		7443D08027495DCE00B6F2B0 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		7443D082274964A200B6F2B0 /* HomeModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModuleBuilder.swift; sourceTree = "<group>"; };
@@ -191,6 +199,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		742E3ADE276AACF0004CE5EF /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				742E3ADF276AAD3A004CE5EF /* Config-DEV.xcconfig */,
+				742E3AE1276AAD66004CE5EF /* Config-STG.xcconfig */,
+				742E3AE3276AAD75004CE5EF /* Config-PROD.xcconfig */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		742E3AED276AB409004CE5EF /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				74A6FAE92753CD4900DC44DF /* AppConfiguration.swift */,
+				742E3AEE276AB425004CE5EF /* AppEnvironment.swift */,
+				742E3ADE276AACF0004CE5EF /* Configs */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		74784D262741712300C6CC92 /* AuthSelect */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,9 +439,9 @@
 		74E0B6912725EDC90090A21B /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				742E3AED276AB409004CE5EF /* Configuration */,
 				74E0B67D2725ED760090A21B /* AppDelegate.swift */,
 				74E0B67F2725ED760090A21B /* SceneDelegate.swift */,
-				74A6FAE92753CD4900DC44DF /* AppConfiguration.swift */,
 				74A6FAED2753CDF900DC44DF /* AppContainer.swift */,
 			);
 			path = Application;
@@ -583,14 +611,17 @@
 			files = (
 				74B926ED27667B33005395A0 /* Montserrat-MediumItalic.ttf in Resources */,
 				74B926E027667B33005395A0 /* Montserrat-Regular.ttf in Resources */,
+				742E3AE0276AAD3A004CE5EF /* Config-DEV.xcconfig in Resources */,
 				74B926E227667B33005395A0 /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				74E0B68A2725ED790090A21B /* LaunchScreen.storyboard in Resources */,
 				74B926F027667B33005395A0 /* Montserrat-BoldItalic.ttf in Resources */,
 				74B926E927667B33005395A0 /* Montserrat-BlackItalic.ttf in Resources */,
+				742E3AE4276AAD75004CE5EF /* Config-PROD.xcconfig in Resources */,
 				74B926E327667B33005395A0 /* Montserrat-Light.ttf in Resources */,
 				74B926EF27667B33005395A0 /* Montserrat-Italic.ttf in Resources */,
 				74B926E427667B33005395A0 /* Montserrat-SemiBold.ttf in Resources */,
 				74B926E627667B33005395A0 /* Montserrat-Black.ttf in Resources */,
+				742E3AE2276AAD66004CE5EF /* Config-STG.xcconfig in Resources */,
 				74B926E727667B33005395A0 /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				74B926C827666795005395A0 /* Colors.xcassets in Resources */,
 				74B926E827667B33005395A0 /* Montserrat-LightItalic.ttf in Resources */,
@@ -639,6 +670,7 @@
 				74B926FA2766808A005395A0 /* Colors.swift in Sources */,
 				74B9271C27689937005395A0 /* HomeView.swift in Sources */,
 				74A6FACE275384E700DC44DF /* AppCoordinator.swift in Sources */,
+				742E3AEF276AB425004CE5EF /* AppEnvironment.swift in Sources */,
 				CE387DE22768FDD700D35186 /* DogAPIRequestBuilder.swift in Sources */,
 				74A6FAF02753CE0200DC44DF /* UserService.swift in Sources */,
 				74A6FB092753FBEF00DC44DF /* HomeCoordinator.swift in Sources */,
@@ -715,8 +747,329 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		742E3AE5276AAEC6004CE5EF /* Debug DEV */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 742E3ADF276AAD3A004CE5EF /* Config-DEV.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug DEV";
+		};
+		742E3AE6276AAEC6004CE5EF /* Debug DEV */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 742E3ADF276AAD3A004CE5EF /* Config-DEV.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63263MV7NR;
+				INFOPLIST_FILE = MVVMSkeleton/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.romansmailik.MVVMSkeleton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug DEV";
+		};
+		742E3AE7276AAED0004CE5EF /* Release DEV */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 742E3ADF276AAD3A004CE5EF /* Config-DEV.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release DEV";
+		};
+		742E3AE8276AAED0004CE5EF /* Release DEV */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 742E3ADF276AAD3A004CE5EF /* Config-DEV.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63263MV7NR;
+				INFOPLIST_FILE = MVVMSkeleton/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.romansmailik.MVVMSkeleton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Release DEV";
+		};
+		742E3AE9276AAEDA004CE5EF /* Debug STG */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 742E3AE1276AAD66004CE5EF /* Config-STG.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug STG";
+		};
+		742E3AEA276AAEDA004CE5EF /* Debug STG */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 742E3AE1276AAD66004CE5EF /* Config-STG.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63263MV7NR;
+				INFOPLIST_FILE = MVVMSkeleton/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.romansmailik.MVVMSkeleton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug STG";
+		};
+		742E3AEB276AAEE2004CE5EF /* Release STG */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 742E3AE1276AAD66004CE5EF /* Config-STG.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release STG";
+		};
+		742E3AEC276AAEE2004CE5EF /* Release STG */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 742E3AE1276AAD66004CE5EF /* Config-STG.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63263MV7NR;
+				INFOPLIST_FILE = MVVMSkeleton/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.romansmailik.MVVMSkeleton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Release STG";
+		};
 		74E0B68C2725ED790090A21B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 742E3AE3276AAD75004CE5EF /* Config-PROD.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -778,6 +1131,7 @@
 		};
 		74E0B68D2725ED790090A21B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 742E3AE3276AAD75004CE5EF /* Config-PROD.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -833,6 +1187,7 @@
 		};
 		74E0B68F2725ED790090A21B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 742E3AE3276AAD75004CE5EF /* Config-PROD.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -853,6 +1208,7 @@
 		};
 		74E0B6902725ED790090A21B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 742E3AE3276AAD75004CE5EF /* Config-PROD.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -878,7 +1234,11 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74E0B68C2725ED790090A21B /* Debug */,
+				742E3AE9276AAEDA004CE5EF /* Debug STG */,
+				742E3AE5276AAEC6004CE5EF /* Debug DEV */,
 				74E0B68D2725ED790090A21B /* Release */,
+				742E3AEB276AAEE2004CE5EF /* Release STG */,
+				742E3AE7276AAED0004CE5EF /* Release DEV */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -887,7 +1247,11 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74E0B68F2725ED790090A21B /* Debug */,
+				742E3AEA276AAEDA004CE5EF /* Debug STG */,
+				742E3AE6276AAEC6004CE5EF /* Debug DEV */,
 				74E0B6902725ED790090A21B /* Release */,
+				742E3AEC276AAEE2004CE5EF /* Release STG */,
+				742E3AE8276AAED0004CE5EF /* Release DEV */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

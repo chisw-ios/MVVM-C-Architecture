@@ -1,0 +1,13 @@
+//
+//  Config-PROD.xcconfig
+//  MVVMSkeleton
+//
+//  Created by Roman Savchenko on 16.12.2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+APP_ENVIRONMENT = prod
+APP_NAME = MVVMSkeleton
+APP_BUNDLE_ID = com.chi.mvvmskeleton
