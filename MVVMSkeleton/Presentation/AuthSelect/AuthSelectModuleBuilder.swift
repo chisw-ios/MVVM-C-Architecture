@@ -16,6 +16,7 @@ final class AuthSelectModuleBuilder {
     class func build() -> Module<AuthSelectTransition, UIViewController> {
         let viewModel = AuthSelectViewModel()
         let viewController = AuthSelectViewController(viewModel: viewModel)
-        return Module(viewController: viewController, transitionPublisher: viewModel.transitionPublisher)
+        return Module(viewController: viewController,
+                      transitionPublisher: viewModel.transitionPublisher)
     }
 }

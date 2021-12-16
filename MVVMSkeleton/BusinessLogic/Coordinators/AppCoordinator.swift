@@ -20,10 +20,10 @@ final class AppCoordinator: Coordinator {
     
     private var cancellables = Set<AnyCancellable>()
 
-    init(window: UIWindow, navigationController: UINavigationController = UINavigationController(), container: AppContainer) {
+    init(window: UIWindow, container: AppContainer, navigationController: UINavigationController = UINavigationController()) {
         self.window = window
-        self.navigationController = navigationController
         self.container = container
+        self.navigationController = navigationController
     }
 
     func start() {
@@ -34,7 +34,8 @@ final class AppCoordinator: Coordinator {
     }
 
     private func authFlow() {
-        let authCoordinator = AuthCoordinator(navigationController: navigationController, container: container)
+        let authCoordinator = AuthCoordinator(navigationController: navigationController,
+                                              container: container)
         childCoordinators.append(authCoordinator)
         authCoordinator.didFinishPublisher
             .sink { [unowned self] in
@@ -46,7 +47,8 @@ final class AppCoordinator: Coordinator {
     }
 
     private func mainFlow() {
-        let mainCoordinator = MainTabBarCoordinator(navigationController: navigationController, container: container)
+        let mainCoordinator = MainTabBarCoordinator(navigationController: navigationController,
+                                                    container: container)
         childCoordinators.append(mainCoordinator)
         mainCoordinator.didFinishPublisher
             .sink { [unowned self] in

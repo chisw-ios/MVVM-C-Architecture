@@ -19,7 +19,7 @@ final class SettingsViewController: BaseViewController<SettingsViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
-        title = Localization.settings
+        title = Localization.settings.uppercased()
     }
 
     private func setupBindings() {

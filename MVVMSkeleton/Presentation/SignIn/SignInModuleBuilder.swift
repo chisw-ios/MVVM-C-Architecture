@@ -17,6 +17,7 @@ final class SignInModuleBuilder {
         let viewModel = SignInViewModel(authService: container.authService,
                                         userService: container.userService)
         let viewController = SignInViewController(viewModel: viewModel)
-        return Module(viewController: viewController, transitionPublisher: viewModel.transitionPublisher)
+        return Module(viewController: viewController,
+                      transitionPublisher: viewModel.transitionPublisher)
     }
 }

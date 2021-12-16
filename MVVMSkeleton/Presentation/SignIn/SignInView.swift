@@ -82,7 +82,7 @@ final class SignInView: BaseView {
         stack.addSpacer(Constant.textFieldSpacing)
         stack.addArranged(doneButton, size: Constant.doneButtonHeight)
 
-        addSubview(scrollView, withEdgeInsets: .zero, safeArea: true)
+        addSubview(scrollView, withEdgeInsets: .zero, safeArea: true, bottomToKeyboard: true)
         scrollView.contentView.addSubview(stack, withEdgeInsets: .all(Constant.containerSpacing))
     }
 }

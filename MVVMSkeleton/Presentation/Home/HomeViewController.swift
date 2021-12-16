@@ -19,7 +19,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
-        title = Localization.home
+        title = Localization.home.uppercased()
     }
 
     private func setupBindings() {

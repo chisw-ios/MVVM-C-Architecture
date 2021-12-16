@@ -29,7 +29,6 @@
 		74A6FAEA2753CD4900DC44DF /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6FAE92753CD4900DC44DF /* AppConfiguration.swift */; };
 		74A6FAEE2753CDF900DC44DF /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6FAED2753CDF900DC44DF /* AppContainer.swift */; };
 		74A6FAF02753CE0200DC44DF /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6FAEF2753CE0200DC44DF /* UserService.swift */; };
-		74A6FAF32753CFD400DC44DF /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 74A6FAF22753CFD400DC44DF /* Swinject */; };
 		74A6FAF72753D76900DC44DF /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 74A6FAF62753D76900DC44DF /* KeychainAccess */; };
 		74A6FAFE2753FA3400DC44DF /* MainTabBarModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6FAFB2753FA3400DC44DF /* MainTabBarModuleBuilder.swift */; };
 		74A6FAFF2753FA3400DC44DF /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6FAFC2753FA3400DC44DF /* MainTabBarViewController.swift */; };
@@ -191,7 +190,6 @@
 				74784D2C2741790900C6CC92 /* CombineCocoa in Frameworks */,
 				74784D2F27417E5D00C6CC92 /* KeyboardLayoutGuide in Frameworks */,
 				CE387DD82768ED0800D35186 /* CombineNetworking in Frameworks */,
-				74A6FAF32753CFD400DC44DF /* Swinject in Frameworks */,
 				74A6FAF72753D76900DC44DF /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,7 +555,6 @@
 			packageProductDependencies = (
 				74784D2B2741790900C6CC92 /* CombineCocoa */,
 				74784D2E27417E5D00C6CC92 /* KeyboardLayoutGuide */,
-				74A6FAF22753CFD400DC44DF /* Swinject */,
 				74A6FAF62753D76900DC44DF /* KeychainAccess */,
 				CE387DD72768ED0800D35186 /* CombineNetworking */,
 			);
@@ -591,7 +588,6 @@
 			packageReferences = (
 				74784D2A2741790900C6CC92 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 				74784D2D27417E5D00C6CC92 /* XCRemoteSwiftPackageReference "KeyboardLayoutGuide" */,
-				74A6FAF12753CFD400DC44DF /* XCRemoteSwiftPackageReference "Swinject" */,
 				74A6FAF52753D76900DC44DF /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				CE387DD62768ED0800D35186 /* XCRemoteSwiftPackageReference "CombineNetworking" */,
 			);
@@ -1275,14 +1271,6 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		74A6FAF12753CFD400DC44DF /* XCRemoteSwiftPackageReference "Swinject" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/Swinject.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		74A6FAF52753D76900DC44DF /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
@@ -1311,11 +1299,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 74784D2D27417E5D00C6CC92 /* XCRemoteSwiftPackageReference "KeyboardLayoutGuide" */;
 			productName = KeyboardLayoutGuide;
-		};
-		74A6FAF22753CFD400DC44DF /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 74A6FAF12753CFD400DC44DF /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
 		};
 		74A6FAF62753D76900DC44DF /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;

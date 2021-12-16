@@ -19,6 +19,7 @@ final class SignUpViewController: BaseViewController<SignUpViewModel> {
     override func viewDidLoad() {
         setupBindings()
         super.viewDidLoad()
+        title = Localization.signUp.uppercased()
     }
 
     private func setupBindings() {

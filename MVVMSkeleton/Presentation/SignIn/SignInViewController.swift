@@ -19,6 +19,7 @@ final class SignInViewController: BaseViewController<SignInViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
+        title = Localization.signIn.uppercased()
     }
 
     private func setupBindings() {

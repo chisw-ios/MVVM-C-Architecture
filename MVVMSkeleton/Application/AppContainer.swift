@@ -42,34 +42,6 @@ final class AppContainerImpl: AppContainer {
                                   requestBuilder: DogAPIRequestBuilder.self,
                                   plugins: [authPlugin])
         
-        dogService = DogServiceImpl(provider)
+        self.dogService = DogServiceImpl(provider)
     }
 }
-
-//import Swinject
-//final class AppContainerImpl: AppContainer {
-//    private let container: Container
-//
-//    var authService: AuthService {
-//        container.resolve(AuthService.self)!
-//    }
-//    var userService: UserService {
-//        container.resolve(UserService.self)!
-//    }
-//    var appSettingsService: AppSettingsService {
-//        container.resolve(AppSettingsService.self)!
-//    }
-//
-//    init() {
-//        self.container = Container()
-//        setupContainer()
-//    }
-//
-//    private func setupContainer() {
-//        container.register(Network.self) { _ in NetworkImpl() }
-//        container.register(AuthService.self) { r in
-//            AuthServiceImpl(network: r.resolve(Network.self)!)
-//        }
-//        container.register(AppSettingsService.self) { _ in AppSettingsServiceImpl()}.inObjectScope(.container)
-//    }
-//}

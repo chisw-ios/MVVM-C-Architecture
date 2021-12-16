@@ -23,6 +23,10 @@ final class SettingsCoordinator: Coordinator {
     }
 
     func start() {
+        settingsRoot()
+    }
+
+    private func settingsRoot() {
         let module = SettingsModuleBuilder.build(container: container)
         module.transitionPublisher
             .sink { [unowned self] transition in
