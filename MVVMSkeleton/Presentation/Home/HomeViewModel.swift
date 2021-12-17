@@ -35,6 +35,7 @@ final class HomeViewModel: BaseViewModel {
                 isLoadingSubject.send(true)
                 return dogService.getBreeds(text)
             }
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 self?.isLoadingSubject.send(false)
                 guard case let .failure(error) = completion else {

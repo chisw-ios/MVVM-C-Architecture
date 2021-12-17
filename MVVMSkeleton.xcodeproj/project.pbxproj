@@ -87,12 +87,12 @@
 		74E0B69A2725F31F0090A21B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E0B6992725F31F0090A21B /* BaseViewController.swift */; };
 		74E0B69D2725F3450090A21B /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E0B69C2725F3450090A21B /* BaseViewModel.swift */; };
 		74E0B6AB2725FA740090A21B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E0B6AA2725FA740090A21B /* Coordinator.swift */; };
-		CE387DD82768ED0800D35186 /* CombineNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = CE387DD72768ED0800D35186 /* CombineNetworking */; };
 		CE387DDC2768FCC300D35186 /* AuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE387DDB2768FCC300D35186 /* AuthPlugin.swift */; };
 		CE387DE02768FDA700D35186 /* DogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE387DDF2768FDA700D35186 /* DogService.swift */; };
 		CE387DE22768FDD700D35186 /* DogAPIRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE387DE12768FDD700D35186 /* DogAPIRequestBuilder.swift */; };
 		CE387DE42768FE1B00D35186 /* DogServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE387DE32768FE1B00D35186 /* DogServiceImpl.swift */; };
 		CE387DE62768FEC500D35186 /* DogResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE387DE52768FEC500D35186 /* DogResponseModel.swift */; };
+		CE9B1413276CCC7100ECBA29 /* CombineNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = CE9B1412276CCC7100ECBA29 /* CombineNetworking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -189,7 +189,7 @@
 			files = (
 				74784D2C2741790900C6CC92 /* CombineCocoa in Frameworks */,
 				74784D2F27417E5D00C6CC92 /* KeyboardLayoutGuide in Frameworks */,
-				CE387DD82768ED0800D35186 /* CombineNetworking in Frameworks */,
+				CE9B1413276CCC7100ECBA29 /* CombineNetworking in Frameworks */,
 				74A6FAF72753D76900DC44DF /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,7 +556,7 @@
 				74784D2B2741790900C6CC92 /* CombineCocoa */,
 				74784D2E27417E5D00C6CC92 /* KeyboardLayoutGuide */,
 				74A6FAF62753D76900DC44DF /* KeychainAccess */,
-				CE387DD72768ED0800D35186 /* CombineNetworking */,
+				CE9B1412276CCC7100ECBA29 /* CombineNetworking */,
 			);
 			productName = MVVMSkeleton;
 			productReference = 74E0B67A2725ED760090A21B /* MVVMSkeleton.app */;
@@ -589,7 +589,7 @@
 				74784D2A2741790900C6CC92 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 				74784D2D27417E5D00C6CC92 /* XCRemoteSwiftPackageReference "KeyboardLayoutGuide" */,
 				74A6FAF52753D76900DC44DF /* XCRemoteSwiftPackageReference "KeychainAccess" */,
-				CE387DD62768ED0800D35186 /* XCRemoteSwiftPackageReference "CombineNetworking" */,
+				CE9B1411276CCC7100ECBA29 /* XCRemoteSwiftPackageReference "CombineNetworking" */,
 			);
 			productRefGroup = 74E0B67B2725ED760090A21B /* Products */;
 			projectDirPath = "";
@@ -1279,12 +1279,12 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		CE387DD62768ED0800D35186 /* XCRemoteSwiftPackageReference "CombineNetworking" */ = {
+		CE9B1411276CCC7100ECBA29 /* XCRemoteSwiftPackageReference "CombineNetworking" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kvasnetskyi/CombineNetworking";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 0.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1305,9 +1305,9 @@
 			package = 74A6FAF52753D76900DC44DF /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
 		};
-		CE387DD72768ED0800D35186 /* CombineNetworking */ = {
+		CE9B1412276CCC7100ECBA29 /* CombineNetworking */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CE387DD62768ED0800D35186 /* XCRemoteSwiftPackageReference "CombineNetworking" */;
+			package = CE9B1411276CCC7100ECBA29 /* XCRemoteSwiftPackageReference "CombineNetworking" */;
 			productName = CombineNetworking;
 		};
 /* End XCSwiftPackageProductDependency section */

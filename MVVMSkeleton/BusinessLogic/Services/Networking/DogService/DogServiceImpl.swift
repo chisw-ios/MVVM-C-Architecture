@@ -21,7 +21,6 @@ class DogServiceImpl {
 extension DogServiceImpl: DogService {
     func getBreeds(_ name: String) -> AnyPublisher<[DogResponseModel], CNError> {
         provider.perform(.search(breeds: name))
-            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
 }
