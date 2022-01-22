@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 enum AuthSelectTransition: Transition {
-    case signIn, signUp, skip
+    case signIn, signUp
 }
 
 final class AuthSelectModuleBuilder {

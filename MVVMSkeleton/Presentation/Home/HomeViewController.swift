@@ -23,20 +23,20 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     }
 
     private func setupBindings() {
-        contentView.actionPublisher
-            .sink { [unowned self] action in
-                switch action {
-                case .didSelect(let dog):
-                    viewModel.showDetail(for: dog)
-                    
-                case .searchTextChanged(let text):
-                    viewModel.searchText = text
-                }
-            }
-            .store(in: &cancellables)
-
-        viewModel.$dogs
-            .sink { [unowned self] dogs in contentView.show(dogs: dogs) }
-            .store(in: &cancellables)
+//        contentView.actionPublisher
+//            .sink { [unowned self] action in
+//                switch action {
+//                case .didSelect(let dog):
+//                    viewModel.showDetail(for: dog)
+//                    
+//                case .searchTextChanged(let text):
+//                    viewModel.searchText = text
+//                }
+//            }
+//            .store(in: &cancellables)
+//
+//        viewModel.$dogs
+//            .sink { [unowned self] dogs in contentView.show(dogs: dogs) }
+//            .store(in: &cancellables)
     }
 }

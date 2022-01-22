@@ -30,7 +30,7 @@ final class AppCoordinator: Coordinator {
         self.window.rootViewController = navigationController
         self.window.makeKeyAndVisible()
         
-        container.userService.isAuthorized ? mainFlow() : authFlow()
+        authFlow()
     }
 
     private func authFlow() {
@@ -47,15 +47,19 @@ final class AppCoordinator: Coordinator {
     }
 
     private func mainFlow() {
-        let mainCoordinator = MainTabBarCoordinator(navigationController: navigationController,
-                                                    container: container)
-        childCoordinators.append(mainCoordinator)
-        mainCoordinator.didFinishPublisher
+        let homeCoordinator = HomeCoordinator(
+            navigationController: navigationController,
+            container: container
+        )
+        
+        childCoordinators.append(homeCoordinator)
+        homeCoordinator.didFinishPublisher
             .sink { [unowned self] in
                 authFlow()
-                removeChild(coordinator: mainCoordinator)
+                removeChild(coordinator: homeCoordinator)
             }
             .store(in: &cancellables)
-        mainCoordinator.start()
+        
+        homeCoordinator.start()
     }
 }

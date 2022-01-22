@@ -18,8 +18,4 @@ final class AuthSelectViewModel: BaseViewModel {
     func showSignUp() {
         transitionSubject.send(.signUp)
     }
-
-    func skipAuth() {
-        transitionSubject.send(.skip)
-    }
 }

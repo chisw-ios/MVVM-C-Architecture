@@ -7,41 +7,121 @@
 
 import Foundation
 import CombineNetworking
+import Swinject
 
 protocol AppContainer: AnyObject {
     var appConfiguration: AppConfiguration { get }
-    var authService: AuthService { get }
     var userService: UserService { get }
-    var appSettingsService: AppSettingsService { get }
-    var dogService: DogService { get }
+    var authService: AuthService { get }
+    var tokenService: TokenService { get }
 }
 
+// TODO: - Add comments about Assembly
+// TODO: - When u will add Swinject code to proj – add descriptions to all of the methods
 final class AppContainerImpl: AppContainer {
-    let appConfiguration: AppConfiguration
-    let authService: AuthService
-    let userService: UserService
-    let appSettingsService: AppSettingsService
-    let dogService: DogService
+    // MARK: - Public Properties
+    public var appConfiguration: AppConfiguration { resolve() }
+    public var userService: UserService { resolve() }
+    public var authService: AuthService { resolve() }
+    public var tokenService: TokenService { resolve() }
+    
+    // MARK: - Private Properties
+    private let container = Container()
+    
+    // MARK: - Init
+    required init() {
+        registerServices()
+    }
+}
 
-    init() {
-        let appConfiguration = AppConfigurationImpl()
-        self.appConfiguration = appConfiguration
-
-        let authService = AuthServiceImpl()
-        self.authService = authService
-
-        let userService = UserServiceImpl(configuration: appConfiguration)
-        self.userService = userService
-
-        let appSettingsService = AppSettingsServiceImpl()
-        self.appSettingsService = appSettingsService
-
-        let authPlugin = AuthPlugin(token: appConfiguration.environment.apiToken)
+// MARK: - Private Methods
+private extension AppContainerImpl {
+    func registerServices() {
+        registerAppConfiguration()
+        registerUserService()
+        registerTokenPlugin()
+        registerNetworkingHandler()
+        registerTokenService()
+        registerAuthService()
         
-        let provider = CNProvider(baseURL: appConfiguration.environment.baseURL,
-                                  requestBuilder: DogAPIRequestBuilder.self,
-                                  plugins: [authPlugin])
-        
-        self.dogService = DogServiceImpl(provider)
+    }
+    
+    func resolve<T>() -> T {
+        container.resolve(T.self)!
+    }
+    
+    func registerAppConfiguration() {
+        container.register(AppConfiguration.self) { _ in
+            AppConfigurationImpl()
+        }
+        .inObjectScope(.container)
+    }
+    
+    func registerUserService() {
+        container.register(UserService.self) { resolver in
+            let configuration = resolver.resolve(AppConfiguration.self)!
+            
+            return UserServiceImpl(bundleId: configuration.bundleId)
+        }
+        .inObjectScope(.container)
+    }
+    
+    func registerTokenPlugin() {
+        container.register(TokenPlugin.self) { resolver in
+            let userService = resolver.resolve(UserService.self)!
+            
+            return TokenPlugin(userService)
+        }
+        .inObjectScope(.transient)
+    }
+    
+    func registerNetworkingHandler() {
+        container.register(NetworkingHandler.self) { _ in
+            NetworkingHandler()
+        }
+        .initCompleted { resolver, handler in
+            handler.tokenService = resolver.resolve(TokenService.self)!
+            handler.userService = resolver.resolve(UserService.self)!
+        }
+    }
+    
+    func registerTokenService() {
+        container.register(TokenService.self) { resolver in
+            let appConfiguration = resolver.resolve(AppConfiguration.self)!
+            let networkingHandler = resolver.resolve(NetworkingHandler.self)!
+            let jsonPugin = JSONContentPlugin()
+            let keyPlugin = APIKeyPlugin(
+                key: appConfiguration.environment.authAPIKey
+            )
+            
+            let provider = CNProvider(
+                baseURL: appConfiguration.environment.tokenBaseURL,
+                errorHandler: networkingHandler,
+                requestBuilder: TokenAPIRequestBuilder.self,
+                plugins: [jsonPugin, keyPlugin]
+            )
+            
+            return TokenServiceImpl(provider)
+        }
+    }
+    
+    func registerAuthService() {
+        container.register(AuthService.self) { resolver in
+            let appConfiguration = resolver.resolve(AppConfiguration.self)!
+            let networkingHandler = resolver.resolve(NetworkingHandler.self)!
+            let jsonPugin = JSONContentPlugin()
+            let keyPlugin = APIKeyPlugin(
+                key: appConfiguration.environment.authAPIKey
+            )
+            
+            let provider = CNProvider(
+                baseURL: appConfiguration.environment.authBaseURL,
+                errorHandler: networkingHandler,
+                requestBuilder: AuthAPIRequestBuilder.self,
+                plugins: [jsonPugin, keyPlugin]
+            )
+            
+            return AuthServiceImpl(provider)
+        }
     }
 }

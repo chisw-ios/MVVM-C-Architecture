@@ -9,7 +9,6 @@ import UIKit
 import Combine
 
 enum SignUpViewAction {
-    case nameChanged(String)
     case emailChanged(String)
     case passwordChanged(String)
     case confirmPasswordChanged(String)
@@ -19,7 +18,6 @@ enum SignUpViewAction {
 final class SignUpView: BaseView {
     // MARK: - Subviews
     private let scrollView = AxisScrollView()
-    private let nameTextField = UITextField()
     private let emailTextField = UITextField()
     private let passwordTextField = UITextField()
     private let confirmPasswordTextField = UITextField()
@@ -49,11 +47,6 @@ final class SignUpView: BaseView {
     }
 
     private func bindActions() {
-        nameTextField.textPublisher
-            .replaceNil(with: "")
-            .sink { [unowned self] in actionSubject.send(.nameChanged($0)) }
-            .store(in: &cancellables)
-
         emailTextField.textPublisher
             .replaceNil(with: "")
             .sink { [unowned self] in actionSubject.send(.emailChanged($0)) }
@@ -76,12 +69,11 @@ final class SignUpView: BaseView {
 
     private func setupUI() {
         backgroundColor = .white
-        nameTextField.placeholder = Localization.name
         emailTextField.placeholder = Localization.email
         passwordTextField.placeholder = Localization.password
         confirmPasswordTextField.placeholder = Localization.confirmPassword
 
-        [nameTextField, emailTextField, passwordTextField, confirmPasswordTextField].forEach {
+        [emailTextField, passwordTextField, confirmPasswordTextField].forEach {
             $0.borderStyle = .roundedRect
         }
 
@@ -93,7 +85,6 @@ final class SignUpView: BaseView {
     private func setupLayout() {
         let stack = UIStackView()
         stack.setup(axis: .vertical, alignment: .fill, distribution: .fill, spacing: Constant.textFieldSpacing)
-        stack.addArranged(nameTextField, size: Constant.textFieldHeight)
         stack.addArranged(emailTextField, size: Constant.textFieldHeight)
         stack.addArranged(passwordTextField, size: Constant.textFieldHeight)
         stack.addArranged(confirmPasswordTextField, size: Constant.textFieldHeight)

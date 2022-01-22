@@ -32,7 +32,6 @@ final class AuthCoordinator: Coordinator {
                 switch transition {
                 case .signIn:   signIn()
                 case .signUp:   signUp()
-                case .skip:     didFinishSubject.send()
                 }
             }
             .store(in: &cancellables)

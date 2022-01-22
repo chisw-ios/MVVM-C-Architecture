@@ -28,7 +28,6 @@ final class AuthSelectViewController: BaseViewController<AuthSelectViewModel> {
                 switch action {
                 case .signIn: viewModel.showSignIn()
                 case .signUp: viewModel.showSignUp()
-                case .skip: viewModel.skipAuth()
                 }
             }
             .store(in: &cancellables)

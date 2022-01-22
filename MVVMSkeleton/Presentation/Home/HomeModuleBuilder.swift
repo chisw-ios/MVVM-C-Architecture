@@ -16,7 +16,7 @@ enum HomeTransition: Transition {
 
 final class HomeModuleBuilder {
     class func build(container: AppContainer) -> Module<HomeTransition, UIViewController> {
-        let viewModel = HomeViewModel(dogService: container.dogService)
+        let viewModel = HomeViewModel()
         let viewController = HomeViewController(viewModel: viewModel)
         return Module(viewController: viewController, transitionPublisher: viewModel.transitionPublisher)
     }

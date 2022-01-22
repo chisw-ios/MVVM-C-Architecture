@@ -26,9 +26,6 @@ final class SignUpViewController: BaseViewController<SignUpViewModel> {
         contentView.actionPublisher
             .sink { [unowned self] action in
                 switch action {
-                case .nameChanged(let text):
-                    viewModel.name = text
-
                 case .emailChanged(let text):
                     viewModel.email = text
 

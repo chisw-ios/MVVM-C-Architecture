@@ -12,19 +12,31 @@ enum AppEnvironment: String {
     case stg
     case prod
 
-    var baseURL: URL {
+    var storageBaseURL: URL {
         switch self {
-        case .dev: return URL(string: "https://api.thedogapi.com/v1")!
-        case .stg: return URL(string: "https://api.thedogapi.com/v1")!
-        case .prod: return URL(string: "https://api.thedogapi.com/v1")!
+        case .dev, .stg, .prod:
+            return URL(string: "https://rickandmortydemo-default-rtdb.europe-west1.firebasedatabase.app")!
         }
     }
-
-    var apiToken: String {
+    
+    var authBaseURL: URL {
         switch self {
-        case .dev: return "60b38a7e-b2b0-4c87-9106-04c900e0cdf5"
-        case .stg: return "60b38a7e-b2b0-4c87-9106-04c900e0cdf5"
-        case .prod: return "60b38a7e-b2b0-4c87-9106-04c900e0cdf5"
+        case .dev, .stg, .prod:
+            return URL(string: "https://identitytoolkit.googleapis.com")!
+        }
+    }
+    
+    var tokenBaseURL: URL {
+        switch self {
+        case .dev, .stg, .prod:
+            return URL(string: "https://securetoken.googleapis.com")!
+        }
+    }
+    
+    var authAPIKey: String {
+        switch self {
+        case .dev, .stg, .prod:
+            return "AIzaSyCa09W5VQZtpWaVT0ua0mNbhvpM6tibLJk"
         }
     }
 }
