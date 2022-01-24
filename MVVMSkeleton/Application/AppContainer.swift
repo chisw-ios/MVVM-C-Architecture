@@ -14,6 +14,7 @@ protocol AppContainer: AnyObject {
     var userService: UserService { get }
     var authService: AuthService { get }
     var tokenService: TokenService { get }
+    var characterService: CharactersService { get }
 }
 
 // TODO: - Add comments about Assembly
@@ -24,6 +25,7 @@ final class AppContainerImpl: AppContainer {
     public var userService: UserService { resolve() }
     public var authService: AuthService { resolve() }
     public var tokenService: TokenService { resolve() }
+    public var characterService: CharactersService { resolve() }
     
     // MARK: - Private Properties
     private let container = Container()
@@ -43,7 +45,7 @@ private extension AppContainerImpl {
         registerNetworkingHandler()
         registerTokenService()
         registerAuthService()
-        
+        registerCharactersService()
     }
     
     func resolve<T>() -> T {
@@ -122,6 +124,25 @@ private extension AppContainerImpl {
             )
             
             return AuthServiceImpl(provider)
+        }
+    }
+    
+    func registerCharactersService() {
+        container.register(CharactersService.self) { resolver in
+            let appConfiguration = resolver.resolve(AppConfiguration.self)!
+            let networkingHandler = resolver.resolve(NetworkingHandler.self)!
+            let userService = resolver.resolve(UserService.self)!
+            let jsonPugin = JSONContentPlugin()
+            let tokenPlugin = TokenPlugin(userService)
+            
+            let provider = CNProvider(
+                baseURL: appConfiguration.environment.storageBaseURL,
+                errorHandler: networkingHandler,
+                requestBuilder: CharactersAPIRequestBuilder.self,
+                plugins: [jsonPugin, tokenPlugin]
+            )
+            
+            return CharactersServiceImpl(provider)
         }
     }
 }

@@ -9,5 +9,5 @@ import Combine
 import CombineNetworking
 
 protocol TokenService {
-    func refreshToken(_ refreshToken: String) -> AnyPublisher<UserAuthModel, CNError>
+    func refreshToken(_ model: TokenRequestModel) -> AnyPublisher<UserAuthModel, CNError>
 }

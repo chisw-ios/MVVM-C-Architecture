@@ -16,8 +16,18 @@ struct TokenPlugin: CNPlugin {
     }
     
     func modifyRequest(_ request: inout URLRequest) {
-        guard let token = userService.token else { return }
+        guard let url = request.url,
+              let token = userService.token,
+              var components = URLComponents(string: url.absoluteString) else { return }
         
-        request.setValue(token, forHTTPHeaderField: "auth")
+        var queryItems = components.queryItems ?? []
+        queryItems.append(
+            URLQueryItem(name: "auth", value: token)
+        )
+        
+        components.queryItems = queryItems
+        
+        guard let newURL = components.url else { return }
+        request.url = newURL
     }
 }

@@ -18,9 +18,9 @@ struct TokenServiceImpl {
 
 // MARK: - TokenService
 extension TokenServiceImpl: TokenService {
-    func refreshToken(_ refreshToken: String) -> AnyPublisher<UserAuthModel, CNError> {
+    func refreshToken(_ model: TokenRequestModel) -> AnyPublisher<UserAuthModel, CNError> {
         provider.perform(
-            .refreshToken(refreshToken: refreshToken),
+            .refreshToken(model: model),
             decodableType: TokenModel.self
         )
     }

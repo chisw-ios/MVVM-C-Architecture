@@ -9,7 +9,7 @@ import Foundation
 import CombineNetworking
 
 enum TokenAPIRequestBuilder: CNRequestBuilder {
-    case refreshToken(refreshToken: String)
+    case refreshToken(model: TokenRequestModel)
     
     var path: String {
         switch self {
@@ -18,16 +18,7 @@ enum TokenAPIRequestBuilder: CNRequestBuilder {
         }
     }
     
-    var query: QueryItems? {
-        switch self {
-        case .refreshToken(let token):
-            return [
-                "grant_type": "refresh_token",
-                "refresh_token": token
-            ]
-        }
-    }
-    
+    var query: QueryItems? { nil }
     var body: Data? {
         switch self {
         case .refreshToken(let model):

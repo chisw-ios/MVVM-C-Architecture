@@ -38,7 +38,8 @@ extension NetworkingHandler: CNErrorHandler {
                     .eraseToAnyPublisher()
             }
             
-            return tokenService.refreshToken(refreshToken)
+            let model = TokenRequestModel(refreshToken: refreshToken)
+            return tokenService.refreshToken(model)
                 .flatMap { [weak userService] response -> AnyPublisher<Data, CNError> in
                     userService?.save(response)
                     
