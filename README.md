@@ -1,9 +1,9 @@
 # MVVMSkeleton
 
-1. Structure
-2. Module components
-3. Navigation
-4. Environments management
+1. [Structure](#structure)
+2. [Module components](#module-components)
+3. [Navigation](#navigation)
+4. [Environments management](#environment-management)
 
 
 
