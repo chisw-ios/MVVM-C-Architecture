@@ -7,6 +7,8 @@
 
 
 
+[Video presentation record](https://chiswdevelopment.sharepoint.com/:v:/s/iOSteam/EQrLndxDdixIvUG6pm1Nm18BTZQfx1Z5HptBtwQp8jKKkA?e=58Xfse)
+
 ## Structure
 
 * Application - contains app's entry point files(AppDelegate, SceneDelegate), app configurations(dev, stg, prod) and 
