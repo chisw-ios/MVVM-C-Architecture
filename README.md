@@ -4,6 +4,7 @@
 2. [Module components](#module-components)
 3. [Navigation](#navigation)
 4. [Environments management](#environment-management)
+5. [Additional](#additional)
 
 
 
@@ -131,6 +132,8 @@ Which are connected with controller though the bindings. In this case case contr
 
 <img width="383" alt="Screenshot 2022-02-08 at 01 09 04" src="https://user-images.githubusercontent.com/34213871/152887654-6b24af58-9f39-4b70-8f00-3e711b28ca2d.png">
 
+
+## Additional  
 
 - Swinject dependency injection in branch
 https://github.com/chisw-ios/MVVMSkeleton/tree/features/swinject
